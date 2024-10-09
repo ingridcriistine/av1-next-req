@@ -1,3 +1,4 @@
 export enum ROUTES {
-    firstPage = "/primeira-rota"
+    firstPage = "/primeira-rota",
+    secondPage = "/segunda-rota"
 }
