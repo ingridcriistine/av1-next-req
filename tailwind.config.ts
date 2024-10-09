@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         white: "var(--white)",
-        black: "var(--black)",
+        black: "var(--black)"
       },
     },
   },
