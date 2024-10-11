@@ -2,6 +2,7 @@
 
 import { useEffect, useState, Suspense } from "react";
 import Image from "next/image";
+import { Card } from "@/components/card";
 
 interface IData {
     name: string,
@@ -24,16 +25,13 @@ const FetchPage = () => {
     }, [])
 
     return (
-        <div className="bg-zinc-900 text-white">
+        <div className="">
             <h1 className="font-bold p-4 pt-32 flex justify-center text-[22px]">Personagens</h1>
             <div className=" pt-10 pb-20 flex row flex-wrap justify-center">
-                <Suspense fallback={<div>Loading...</div>}>
+                <Suspense fallback={<div className="pt-16">Loading...</div>}>
                     {characters.map((item) => {
                         return (
-                            <div key={item._id} className="bg-white rounded m-4 text-black w-[250px] flex flex-col items-center justify-center border-cyan-600 border-2 shadow-sm shadow-slate-50">
-                                <h2 className="p-4 h-[90px] font-semibold text-center flex items-center">{item.name}</h2>
-                                <Image className="w-[200px] h-[220px] mb-6 rounded opacity-100 hover:opacity-90 shadow-lg shadow-stone-800" src={item.imageUrl} width={1000} height={1000} alt="foto" priority/>
-                            </div>
+                            <Card name={item.name} image={item.imageUrl} id={item._id}/>
                         )
                     })}
                 </Suspense>
